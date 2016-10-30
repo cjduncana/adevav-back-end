@@ -96,12 +96,22 @@ module.exports = function(db) {
 
       getUser: function(userId) {
         return this.findById(userId);
+      },
+
+      getUserByEmail: function(email) {
+        return this.findOne({
+          where: { email }
+        });
       }
     },
 
     instanceMethods: {
       isAdministrator: function() {
         return this.role === 'Administrator';
+      },
+
+      isValidPassword: function(password) {
+        return bcrypt.compareSync(password, this.password);
       }
     },
 
