@@ -1,0 +1,17 @@
+general:
+  artifacts:
+    - ./coverage
+machine:
+  node:
+    version: v6.2.2
+  services:
+    - docker
+  environment:
+    DB_NAME: circle_test
+    DB_USER: ubuntu
+    DB_HOST: localhost
+test:
+  pre:
+    - npm install
+  post:
+    - npm run coverage
