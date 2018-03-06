@@ -45,7 +45,7 @@
     "commander": "^2.9.0",
     "error-factory": "^0.1.6",
     "fs": "0.0.2",
-    "hapi": "^16.0.1",
+    "hapi": "^17.0.0",
     "hapi-auth-jwt2": "^7.2.4",
     "hapi-swagger": "^7.5.0",
     "inert": "^4.0.3",
