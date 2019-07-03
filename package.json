@@ -20,7 +20,9 @@
     "production": "scripts/wait_for_db | node_modules/.bin/bunyan && npm run migrate:up | node_modules/.bin/bunyan && NODE_ENV=production npm start",
     "start": "node index.js | node_modules/.bin/bunyan",
     "test": "NODE_ENV=test scripts/run_tests",
-    "test:debug": "NODE_ENV=test scripts/debug_tests"
+    "test:debug": "NODE_ENV=test scripts/debug_tests",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -58,12 +60,14 @@
     "sequelize": "^3.24.1",
     "umzug": "^1.11.0",
     "uuid": "^3.0.0",
-    "vision": "^4.1.1"
+    "vision": "^4.1.1",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "code": "^4.0.0",
     "lab": "^13.0.2",
     "open": "0.0.5",
     "sinon": "^2.1.0"
-  }
+  },
+  "snyk": true
 }
